@@ -6,8 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
-    jobs:
-build:
+jobs:
+  build:
     runs-on: ubuntu-latest
     container: python:3.9-slim
     steps:
@@ -26,3 +26,4 @@ build:
 
       - name: Run unit tests with nose
         run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
+        
